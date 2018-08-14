@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+
+<body>
+    <div class="container col-sm-12">
+        <div class="row col-sm-12">
+            <div class="col-sm-12">
+                <h1>Crystal Numbers</h1>
+            </div>
+        </div>
+
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header text-white bg-info">Instructions</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <ul><li>Click on the crystals to match the number shown.</li>
+                            <li>Each crystal will have a different amount each time.</li>
+                            <li>If you go over the number to match, you lose.</li>
+                            <li>If you match the number exactly, you win!</li></ul>
+                        </p> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header text-white bg-info">Scoreboard</div>
+                    <div class="card-body">
+                        <p class="card-text">Wins: <span id="wins"></span></p>
+                        <p class="card-text">Losses: <span id="losses"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header text-white bg-info">Number to Match</div>
+                    <div class="card-body">
+                        <p class="card-text"><span id="randomNumber"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header text-white bg-info">Your Total</div>
+                    <div class="card-body">
+                        <p class="card-text"><span id="userTotal"></span></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row col-sm-12">
+            <div class="col-sm-6" id ="gems">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/javascript/game.js"></script>
+</body>
+</html>
