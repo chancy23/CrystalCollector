@@ -3,41 +3,51 @@ var numbersToPick = [19, 20, 25, 37, 28, 30, 45, 46, 48, 50, 51, 53, 54, 56, 60,
 
 //need to randomly select a number to put in array
 var randomNumber = numbersToPick[Math.floor(Math.random() * numbersToPick.length)];
-    console.log("random number is: " + randomNumber);
+    //console.log("random number is: " + randomNumber);
 
-
-//variable for counting each click
+//variable for counting each click value
 var counter = 0;
-
 
 //need variables for wins and losses
 var wins = 0;
 var losses = 0;
 
 
-//gem images array
-// var gemImages = [".//assets/images/blue_gemstone.png", ".//assets/images/purple_gemstone1.png", ".//assets/images/green_gemstone.png", ".//assets/images/orange_gemstone.png"];
-// console.log(gemImages);
-
-//need array to hold crystal values and assign to each crystal "button"
-var crystalValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+//need array to hold crystal values to assign to each gem image
+var gemPossibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 //need to assign a random value to gemstone
 function assignRandomValue(){
-    var randomValue = crystalValues[Math.floor(Math.random() * crystalValues.length)];
-        console.log("crystal value is: " + randomValue);
+    var randomValue = gemPossibleValues[Math.floor(Math.random() * gemPossibleValues.length)];
+        console.log("gem value is: " + randomValue);
 };
 
+//array of gem image files
 var gemImages = [".//assets/images/blue_gemstone.png", ".//assets/images/purple_gemstone1.png", ".//assets/images/green_gemstone.png", ".//assets/images/orange_gemstone.png"];
-//function to load gem to page and assign a random value....
-function gemImageLoad(){
-    for (var i = 0; i < gemImages.length; i++) {
-        var imageGem = $("<img>");
-        imageGem.attr("src", gemImages[i]);
-        imageGem.attr("data-gemvalue", assignRandomValue());
-        $("#gems").append(imageGem);
-    }
-}
+
+$("#gems").on("click", function(){
+    alert("clicked in gems div")
+});
+//load gems to page and assign a random value to each....
+
+// for (var i = 0; i < gemImages.length; i++) {
+//     var imageGem = $("<img>");
+//     imageGem.addClass("gemImage");
+//     imageGem.attr("src", gemImages[i]);
+//     imageGem.attr("data-gemvalue", assignRandomValue());
+//     $("#gems").append(imageGem);
+//     console.log(imageGem);
+// };
+
+// $(".gemImage").on("click", function() {
+//     //var gemValue = 5;
+//     var gemValue = ($(this).attr("data-gemvalue"));
+//     gemValue = parseInt(gemValue);
+//     console.log("this is the value of the gem clicked: " + gemValue);
+//     counter += gemValue;
+//     $("#userTotal").text(counter);
+// });
+
 
 //need to randomize gem value each new game
 
@@ -53,13 +63,15 @@ function resetGame(){
 
 //empty array to capture each gem clicked on amount
 var guessTotal = [];
+$("#guessTotal").text(guessTotal);
 
 $(document).ready(function() {
     //displays random number to match to on page in a card
     $("#randomNumber").text(randomNumber);
         console.log("Number to Match box: " + randomNumber);
 
-    gemImageLoad();
+    //gemImageLoad();
+
     
     //adding the gem to the html page (will assign a random value to each gem variable)
         //blue gem
