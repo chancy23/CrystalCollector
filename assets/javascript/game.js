@@ -1,66 +1,98 @@
 
 $(document).ready(function() {
     
-    //variable for counting each click value
-    var counter = 0;
-
-    //need variables for wins and losses
-    var wins = 0;
-    var losses = 0;
-
-
-    //all possible numbers
-    var numbersToPick = [19, 20, 25, 37, 28, 30, 45, 46, 48, 50, 51, 53, 54, 56, 60, 62, 65, 66, 67, 70, 75, 79, 83, 89, 91, 92, 94, 95, 100, 104, 105, 109, 110, 114, 115, 117, 19, 120];
-
-    //randomly selected number from array
-    var randomNumber = numbersToPick[Math.floor(Math.random() * numbersToPick.length)];
-        $("#randomNumber").text(randomNumber);
-        console.log("Number to Match box: " + randomNumber);
-
-    //need array to hold crystal values to assign to each gem image
-    var gemPossibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
-    
-    //need to reset game on a win or loss +1, pick new number, and reset guessed amount array
-        // function resetGame(){
-        //     randomNumber;
-        //     assignRandomValue();
-            //need to randomize gem value each new game
-        // };
-
-    var gemImages = [".//assets/images/blue_gemstone.png", ".//assets/images/purple_gemstone1.png", ".//assets/images/green_gemstone.png", ".//assets/images/orange_gemstone.png"];
-
-    //need to grab each image file out of the array, display as an img element, and add a random value to it
-    //assign the random value from the function to each gem (need to figure out how to not repeat numbers)
-    for (var i = 0; i < gemImages.length; i++) {
-        var randomValue = gemPossibleValues[Math.floor(Math.random() * gemPossibleValues.length)];
-        var imageGem = $("<img>");
-        imageGem.addClass("gemImage");
-        imageGem.attr("src", gemImages[i]);
-        imageGem.attr("data-gemvalue", randomValue);
-        $("#gems").append(imageGem);
-        console.log("gem value is: " + randomValue);
+    //object for the gems and values
+    var gems = {
+        blue: {
+            value: 0
+        },
+        green: {
+            value: 0
+        },
+        orange: {
+            value: 0
+        },
+        purple: {
+            value: 0
+        },
     };
     
-    //on a click to each gem need to get value (randomnumber function assigned value) and add to counter
-    $(".gemImage").on("click", function() {
-        var gemValue = ($(this).attr("data-gemvalue"));
-        gemValue = parseInt(gemValue);
-        console.log("this is the value of the gem clicked: " + gemValue);
-        counter += gemValue;
-        $("#userTotal").text(counter);
+    //variables
+    var target = 0
+    var counter = 0;
+    var wins = 0;
+    var losses = 0;
+    
+    //functions====================================================================
 
-        if (counter === randomNumber) {
+    // function to randomly select number from min, max parameters
+    function generateRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+
+    //function to start game, get random number on page, and assign gem values (moved from separate functions)
+    function startGame() {
+        
+        //resets counter
+        counter = 0;
+        $("#counter").text(counter);
+        
+        //sets target number from randomnumber function
+        target = generateRandom(19, 120);
+        $("#randomNumber").text(target);
+        console.log("this is the target number: " + target);
+        
+        //gives each gem a random value
+        gems.blue.value = generateRandom(1, 12);
+        gems.green.value = generateRandom(1, 12);
+        gems.orange.value = generateRandom(1, 12);
+        gems.purple.value = generateRandom(1, 12);
+
+        console.log("this is blue value: " + gems.blue.value);
+        console.log("this is green value: " + gems.green.value);
+        console.log("this is orange value: " + gems.orange.value);
+        console.log("this is purple value: " + gems.purple.value);
+    };
+
+    function assignGemValue(gems) {
+        counter += gems.value;
+        $("#counter").text(counter);
+        winOrLoss();
+    };
+
+    //function to determine if a win or loss and to invoke new game function
+    function winOrLoss() {
+        if (counter === target) {
             $("#wins").text(wins +1);
-                //resetGame();
+            startGame();
         }
-            //if amount of userTotal is OVER gem value, its a loss
-        else if (counter > randomNumber) {
+        else if (counter > target) {
             $("#losses").text(losses +1);
-            //resetGame();
+            startGame();
         };
+    };
+
+    // //main processes/game play ===============================================================
+
+    startGame();
+
+    //on a click to each gem and add to counter and call win or loss function to determine score
+    $("#blue").on("click", function() {
+        assignGemValue(gems.blue);
     });
 
-    //on win or loss +1, reset game to play again but keep scoreboard the same numbers.
+    $("#green").on("click", function() {
+        assignGemValue(gems.green);
+    });
 
+    $("#orange").on("click", function() {
+        assignGemValue(gems.orange);
+    });
+
+    $("#purple").on("click", function() {
+        assignGemValue(gems.purple);
+    });
+    
+
+    
 });

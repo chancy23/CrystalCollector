@@ -2,11 +2,7 @@ body {
     background-color: lightgray;
 }
 
-.gemImage {
+img {
     width: 100px;
     height: auto;
-}
-
-#gem {
-    height: 100px;
 }
