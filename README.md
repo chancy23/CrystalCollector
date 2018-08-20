@@ -1,33 +1,11 @@
 # unit-4-game
 
+Player must try to match the Target number by clickiing on the gems, each gem has a randomly assigned value.
 
-**keep** Gem graphics from  <a href="https://pngtree.com/">pngtree.com</a>
+If the player matches the target exactly they win, wins will go up by 1, and game will generate a new target number, and reassign the gem values (all random again), and the counter (Your Total section) is cleared.
 
-2. The player will have to guess the answer, just like in Word Guess. This time, though, the player will guess with numbers instead of letters. 
+If the player goes over the target number, they lose, the losses will go up by 1, and the game resets (with random target and gem values), and the counter (Your Total section) is cleared.
 
-3. Here's how the app works:
-
-   * There will be four crystals displayed as buttons on the page.
-
-   * The player will be shown a random number at the start of the game.
-
-   * When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
-
-     * Your game will hide this amount until the player clicks a crystal.
-     * When they do click one, update the player's score counter.
-
-   * The player wins if their total score matches the random number from the beginning of the game.
-
-   * The player loses if their score goes above the random number.
-
-   * The game restarts whenever the player wins or loses.
-
-     * When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
-
-   * The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
-
-##### Option 1 Game design notes
-
-* The random number shown at the start of the game should be between 19 - 120.
-
-* Each crystal should have a random hidden value between 1 - 12.
+Image Credits:
+  Gem graphics from https://pngtree.com/.
+  Background image from www.radco.com.

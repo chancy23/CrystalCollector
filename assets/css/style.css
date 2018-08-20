@@ -1,8 +1,41 @@
+/* the first three items allow to set a background image to have opacity */
+html,
 body {
-    background-color: lightgray;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    background-image: url("https://www.randco.com/media/wysiwyg/RCo-PDP-Background-Images/gemstone-shampoo.jpg");
+}
+
+body {
+    background:rgba(255,255,255,0.6);
+}
+/* end opacity modifications */
+
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.jumbotron {  
+    border: 2px solid #17a2b8;
+}
+
+#gems {
+    background-color: #fff;
+    border: 2px solid #17a2b8;
+    margin: 20px auto 30px auto;
+    padding: 10px;
 }
 
 img {
     width: 100px;
-    height: auto;
+    height: auto; 
+}
+
+img:hover {
+    opacity: 0.5;
 }

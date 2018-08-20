@@ -20,8 +20,8 @@ $(document).ready(function() {
     //variables
     var target = 0
     var counter = 0;
-    var wins = 0;
-    var losses = 0;
+    var wins = 1;
+    var losses = 1;
     
     //functions====================================================================
 
@@ -63,11 +63,11 @@ $(document).ready(function() {
     //function to determine if a win or loss and to invoke new game function
     function winOrLoss() {
         if (counter === target) {
-            $("#wins").text(wins +1);
+            $("#wins").text(wins ++);
             startGame();
         }
         else if (counter > target) {
-            $("#losses").text(losses +1);
+            $("#losses").text(losses ++);
             startGame();
         };
     };
