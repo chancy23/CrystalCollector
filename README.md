@@ -14,7 +14,7 @@ If the player goes over the target number, they lose, the losses will go up by 1
   -Javascript and jQuery
 
 #Image Credits:
-  Gem graphics from https://pngtree.com/.
+  Gem graphics and icon from https://pngtree.com/.
   Background image from www.radco.com.
 
 Deployed at: https://chancy23.github.io/unit-4-game/
