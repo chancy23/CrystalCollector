@@ -1,19 +1,9 @@
-/* the first three items allow to set a background image to have opacity */
-html,
-body {
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
-html {
-    background-image: url("https://www.randco.com/media/wysiwyg/RCo-PDP-Background-Images/gemstone-shampoo.jpg");
-}
+@import url('https://fonts.googleapis.com/css?family=Raleway:500|Uncial+Antiqua');
 
 body {
-    background:rgba(255,255,255,0.6);
+    background-image: url("../images/gemstonebackground.jpg");
+    font-family: 'Raleway', sans-serif;
 }
-/* end opacity modifications */
 
 .container {
     padding-top: 20px;
@@ -22,6 +12,12 @@ body {
 
 .jumbotron {  
     border: 2px solid #17a2b8;
+    margin-bottom: 5px;
+}
+
+.display-4 {
+    text-align: center;
+    font-family: 'Uncial Antiqua', cursive;
 }
 
 #gems {
@@ -38,4 +34,35 @@ img {
 
 img:hover {
     opacity: 0.5;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+/* adjust page items to fit and align better on small screens*/
+@media (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+    }
+    .card-header {
+        padding-right: 5px;
+        padding-left: 5px;
+
+    }
+}
+
+@media (max-width: 768px) {
+    img {
+        width: 20%;
+    }
+    #gems {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 640px) {
+    .display-4 {
+        font-size: 28px;
+    }
 }
