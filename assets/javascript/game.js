@@ -17,20 +17,19 @@ $(document).ready(function() {
         },
     };
     
-    //variables
+    //Main variables
     var target = 0
     var counter = 0;
     var wins = 1;
     var losses = 1;
     
     //functions====================================================================
-
-    // function to randomly select number from min, max parameters
+    // Helper function to randomly select number from min, max parameters to assign to gem value and to target value
     function generateRandom(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     };
 
-    //function to start game, get random number on page, and assign gem values (moved from separate functions)
+    //function to start game, get random number on page, and assign gem values
     function startGame() {
         
         //resets counter
@@ -48,19 +47,21 @@ $(document).ready(function() {
         gems.orange.value = generateRandom(1, 12);
         gems.purple.value = generateRandom(1, 12);
 
-        console.log("this is blue value: " + gems.blue.value);
-        console.log("this is green value: " + gems.green.value);
-        console.log("this is orange value: " + gems.orange.value);
-        console.log("this is purple value: " + gems.purple.value);
+        //Testing section
+        // console.log("this is blue value: " + gems.blue.value);
+        // console.log("this is green value: " + gems.green.value);
+        // console.log("this is orange value: " + gems.orange.value);
+        // console.log("this is purple value: " + gems.purple.value);
     };
 
+    //Assign gem value and when called increase the counter by that amounta and then calls the win/loss function 
     function assignGemValue(gems) {
         counter += gems.value;
         $("#counter").text(counter);
         winOrLoss();
     };
 
-    //function to determine if a win or loss and to invoke new game function
+    //Determine if a win or loss and to invoke new game function
     function winOrLoss() {
         if (counter === target) {
             $("#wins").text(wins ++);
@@ -73,10 +74,9 @@ $(document).ready(function() {
     };
 
     // //main processes/game play ===============================================================
-
     startGame();
 
-    //on a click to each gem and add to counter and call win or loss function to determine score
+    //onclick for each gem to call the assignemValue function for that value from the object
     $("#blue").on("click", function() {
         assignGemValue(gems.blue);
     });
@@ -92,7 +92,5 @@ $(document).ready(function() {
     $("#purple").on("click", function() {
         assignGemValue(gems.purple);
     });
-    
-
-    
+     
 });

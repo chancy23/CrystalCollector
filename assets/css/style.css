@@ -40,7 +40,7 @@ img:hover {
     margin-top: 20px;
 }
 
-/* adjust page items to fit and align better on small screens*/
+/* adjust page items to fit and align better on small screens */
 @media (max-width: 1024px) {
     .container {
         max-width: 95%;
