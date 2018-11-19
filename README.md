@@ -1,4 +1,4 @@
-# unit-4-game (Crystal Collector Game)
+# Crystal Collector Game
 
 #Goal
 A game, wherea player must try to match the target number by clickiing on the gems, each gem has a randomly assigned value.
