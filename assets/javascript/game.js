@@ -17,7 +17,6 @@ $(document).ready(function() {
         },
     };
     
-    //Main variables
     var target = 0
     var counter = 0;
     var wins = 1;
@@ -29,18 +28,14 @@ $(document).ready(function() {
         return Math.floor(Math.random() * (max - min + 1) + min);
     };
 
-    //function to start game, get random number on page, and assign gem values
     function startGame() {
-        
-        //resets counter
         counter = 0;
         $("#counter").text(counter);
         
         //sets target number from randomnumber function
         target = generateRandom(19, 120);
         $("#randomNumber").text(target);
-        console.log("this is the target number: " + target);
-        
+
         //gives each gem a random value
         gems.blue.value = generateRandom(1, 12);
         gems.green.value = generateRandom(1, 12);
@@ -48,6 +43,7 @@ $(document).ready(function() {
         gems.purple.value = generateRandom(1, 12);
 
         //Testing section
+        //console.log("this is the target number: " + target);
         // console.log("this is blue value: " + gems.blue.value);
         // console.log("this is green value: " + gems.green.value);
         // console.log("this is orange value: " + gems.orange.value);
@@ -61,7 +57,6 @@ $(document).ready(function() {
         winOrLoss();
     };
 
-    //Determine if a win or loss and to invoke new game function
     function winOrLoss() {
         if (counter === target) {
             $("#wins").text(wins ++);
@@ -76,7 +71,6 @@ $(document).ready(function() {
     // //main processes/game play ===============================================================
     startGame();
 
-    //onclick for each gem to call the assignemValue function for that value from the object
     $("#blue").on("click", function() {
         assignGemValue(gems.blue);
     });
@@ -92,5 +86,4 @@ $(document).ready(function() {
     $("#purple").on("click", function() {
         assignGemValue(gems.purple);
     });
-     
 });
