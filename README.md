@@ -17,8 +17,8 @@ If the player goes over the target number, they lose, the losses tally will go u
   - Gem graphics and icon from https://pngtree.com/.
   - Background image from www.radco.com.
 
-Deployed at: https://chancy23.github.io/unit-4-game/
+Deployed at: https://chancy23.github.io/CrystalCollector/
 
-Video Demo: https://drive.google.com/open?id=1aqxPPnRYPdD8IZhO6n2X6ZhkeqiYTftV
+Video Demo: https://drive.google.com/file/d/1aqxPPnRYPdD8IZhO6n2X6ZhkeqiYTftV/view?usp=sharing
 
 Any questions or issues please contact me at chancyleath@hotmail.com
